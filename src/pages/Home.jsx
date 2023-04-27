@@ -5,10 +5,10 @@ import Filter from "../components/Filter";
 const Home = () => {
   return (
     <>
-      <div className="max-w-4xl mt-16 mx-auto">
+      <div className="max-w-4xl mt-16 lg:mx-auto mx-4">
         {/* Welcome Section */}
         <div className="my-4">
-          <h3 className="text-2xl font-extrabold text-gray-900">
+          <h3 className="text-2xl mb-3 font-extrabold text-gray-900">
             Welcome to EquityGPT!
           </h3>
           <p className="font-semibold text-base text-gray-700">

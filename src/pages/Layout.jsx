@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <React.Fragment>
       <Header />
-      <div className="container">
+      <div className="container mx-auto">
         {/* Rendered the nested routes inside the Outlet */}
         <Outlet />
       </div>

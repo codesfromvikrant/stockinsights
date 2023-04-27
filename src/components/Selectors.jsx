@@ -45,9 +45,9 @@ const Selectors = ({ stockdata, timedata, handleChange }) => {
   };
 
   return (
-    <div className="flex justify-start items-center sm:gap-4 gap-2 flex-wrap">
+    <div className="flex justify-start sm:items-center items-start sm:gap-4 gap-2 sm:flex-row flex-col">
       <p className="font-semibold">Search Within :</p>
-      <div className="w-40 relative">
+      <div className="sm:w-40 w-full relative">
         <div
           onClick={toggleDropdown}
           className="drop bg-gray-200 py-2 px-4 rounded-md cursor-pointer flex justify-between items-center"
@@ -55,7 +55,7 @@ const Selectors = ({ stockdata, timedata, handleChange }) => {
           <p>Select Stocks</p>
           <i className="fa-solid fa-caret-down"></i>
         </div>
-        <div className="hidden w-40 bg-gray-100 absolute z-50 justify-start items-start flex-col shadow-md">
+        <div className="hidden sm:w-40 w-full bg-gray-100 absolute z-50 justify-start items-start flex-col shadow-md">
           <input
             type="text"
             placeholder="Search Stocks..."
@@ -67,7 +67,7 @@ const Selectors = ({ stockdata, timedata, handleChange }) => {
         </div>
       </div>
 
-      <div className="w-40 relative">
+      <div className="sm:w-40 w-full relative">
         <div
           onClick={toggleDropdown}
           className="drop bg-gray-200 py-2 px-4 rounded-md cursor-pointer flex justify-between items-center"
@@ -75,7 +75,7 @@ const Selectors = ({ stockdata, timedata, handleChange }) => {
           <p>Select Time</p>
           <i className="fa-solid fa-caret-down"></i>
         </div>
-        <div className="hidden w-40 bg-gray-100 absolute z-40 justify-start items-start flex-col shadow-md">
+        <div className="hidden sm:w-40 w-full bg-gray-100 absolute z-40 justify-start items-start flex-col shadow-md">
           {time}
         </div>
       </div>
