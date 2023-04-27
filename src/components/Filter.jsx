@@ -7,14 +7,10 @@ import Selectors from "./Selectors";
 import CallTranscript from "./CallTranscript";
 
 const Filter = () => {
-  const stocknames = data.map((el) => {
-    return el["stock-name"];
-  });
-  const set = new Set(stocknames);
-  let initialStock = [...set];
-  initialStock = initialStock.map((el) => {
-    return { stock: el, checked: false };
-  });
+  // Extracting stock names from the data and create an array of unique stocks
+  const stocknames = Array.from(new Set(data.map((el) => el["stock-name"])));
+  // Creating an array of objects containing each stock and a 'checked' property
+  const initialStock = stocknames.map((el) => ({ stock: el, checked: false }));
 
   const initialTime = [
     { time: "FY2022Q1", checked: false },
@@ -26,7 +22,6 @@ const Filter = () => {
 
   const [stockdata, setStockdata] = useState(initialStock);
   const [timedata, setTimedata] = useState(initialTime);
-
   const [selected, setSelected] = useState([]);
 
   const handleChange = (event) => {
@@ -88,7 +83,7 @@ const Filter = () => {
         handleChange={handleChange}
       />
       <SearchBar />
-      {selected && (
+      {selected.length > 0 && (
         <Selected
           selected={selected}
           setSelected={setSelected}

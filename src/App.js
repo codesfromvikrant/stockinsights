@@ -6,15 +6,15 @@ import Home from './pages/Home'
 
 const App = () => {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />} >
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </Router>
-    </>
+    // Wrap entire app in React Router component
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />} >
+          {/* Set home page */}
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </Router>
   )
 }
 

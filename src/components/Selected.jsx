@@ -11,8 +11,11 @@ const Selected = ({
   filteredData,
   handleCheckBox,
 }) => {
+  // Handle click event for removing a selected stock
   const handleClick = (event) => {
+    // Getting the stock name from the previous sibling of the clicked element
     const stockName = event.target.previousSibling.textContent;
+    // Removing the selected stock from the state
     setSelected(selected.filter((el) => el.title !== stockName));
     handleCheckBox(event.target.dataset.type, stockName);
   };
@@ -33,8 +36,6 @@ const Selected = ({
       </div>
     );
   });
-
-  if (selectedStocks.length === 0) return <div></div>;
 
   return (
     <div className="flex justify-start items-center flex-wrap gap-2 p-2">

@@ -4,10 +4,13 @@ import Header from "../components/Header";
 
 const Layout = () => {
   return (
-    <div className="">
+    <React.Fragment>
       <Header />
-      <Outlet />
-    </div>
+      <div className="container">
+        {/* Rendered the nested routes inside the Outlet */}
+        <Outlet />
+      </div>
+    </React.Fragment>
   );
 };
 

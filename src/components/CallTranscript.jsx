@@ -3,9 +3,11 @@ import data from "../data";
 import { nanoid } from "nanoid";
 
 const CallTranscript = ({ filteredData }) => {
+  // creating an array of JSX elements for each transcript in the filtered data
   const transcripts = filteredData.map((el) => {
     return (
       <div key={nanoid()} className="md:my-4 sm:my-5 my-6">
+        {/* heading and time period */}
         <div className="flex justify-start items-center flex-wrap md:gap-4 sm:gap-3 gap-2">
           <p className="text-blue-600 underline font-semibold cursor-pointer">
             {el.heading}
@@ -20,6 +22,8 @@ const CallTranscript = ({ filteredData }) => {
             View insights
           </button>
         </div>
+
+        {/* subheading */}
         <div className="mt-3 text-gray-800">{el.subheading}</div>
       </div>
     );
@@ -27,9 +31,12 @@ const CallTranscript = ({ filteredData }) => {
 
   return (
     <div className="my-5">
+      {/* header */}
       <h3 className="text-gray-900 font-extrabold text-xl">
         Latest Concall Transcripts
       </h3>
+
+      {/* array of transcript elements */}
       {transcripts}
     </div>
   );
